@@ -3,7 +3,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   background-color: #fae1dd;
 }
 
@@ -60,13 +60,15 @@ body {
 
 .text {
   position: absolute;
-  font-family:  'Brush Script MT', cursive;
+  font-family: 'Brush Script MT', cursive;
   font-size: 28px;
   text-align: center;
   line-height: 25px;
   top: 19px;
-  left: 85px;
+  left: 50%;
+  transform: translate(-50%, 0);
   color: #003049;
+  width: 100%;
 }
 
 .heart {
@@ -126,12 +128,11 @@ body {
 /* Add the shadow */
 .shadow {
   position: absolute;
-  width: 330px;
+  width: 300px;
   height: 25px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
-  bottom: 250px;
-  left: 650px;
+  bottom: -100px;
   animation: scale 3s linear infinite;
   z-index: -1;
 }
