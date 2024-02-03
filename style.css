@@ -1,10 +1,11 @@
 /* Set the colour and the position of the background and the elements */
 body {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
   height: 90vh;
-  background-color: #fae1dd;
+  background-color: #dde7c8;
 }
 
 .container {
@@ -22,11 +23,11 @@ body {
   position: relative;
   width: 300px;
   height: 200px;
-  background-color: #f08080;
+  background-color: #6e8b3d;
 }
 
 .envelope:before {
-  background-color: #f08080;
+  background-color: #6e8b3d;
   content: "";
   position: absolute;
   width: 212px;
@@ -39,12 +40,14 @@ body {
 
 .card {
   position: absolute;
+  overflow: hidden;
   background-color: #eae2b7;
   width: 270px;
   height: 170px;
   top: 5px;
   left: 15px;
   box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s linear;
 }
 
 .card:before {
@@ -71,7 +74,7 @@ body {
   width: 100%;
 }
 
-.heart {
+#heart, .heart {
   background-color: #d62828;
   display: inline-block;
   height: 30px;
@@ -83,8 +86,8 @@ body {
   width: 30px;
 }
 
-.heart:before,
-.heart:after {
+#heart:before,
+#heart:after, .heart:before, .heart:after {
   content: "";
   background-color: #d62828;
   border-radius: 50%;
@@ -93,18 +96,18 @@ body {
   width: 30px;
 }
 
-.heart:before {
+#heart:before, .heart:before {
   top: -15px;
   left: 0;
 }
 
-.heart:after {
+#heart:after, .heart:after {
   left: 15px;
   top: 0;
 }
 .front {
   position: absolute;
-  border-right: 180px solid #f4978e;
+  border-right: 180px solid 	#96b85d;
   border-top: 95px solid transparent;
   border-bottom: 100px solid transparent;
   left: 120px;
@@ -117,12 +120,42 @@ body {
 .front:before {
   position: absolute;
   content: "";
-  border-left: 300px solid #f8ad9d;
+  border-left: 300px solid #7c9d45;
   border-top: 195px solid transparent;
   left: -120px;
   top: -95px;
   width: 0;
   height: 0;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.yesButton {
+  background-color: #1f7018;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.noButton {
+  background-color: #880900;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+
 }
 
 /* Add the shadow */
@@ -137,6 +170,7 @@ body {
   z-index: -1;
 }
 
+
 /* To move the envelope up and down */
 @keyframes up {
   0%,
@@ -144,7 +178,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-30px);
+    transform: translateY(-10px);
   }
 }
 
